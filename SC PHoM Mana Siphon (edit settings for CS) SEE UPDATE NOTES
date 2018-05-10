@@ -55,21 +55,22 @@ var #topHeroes 0
 // ---------- Actions ---------- [ Skills ]
 var #enableSkills 1
 
-var #fullManaSkill 1
+var #fullManaSkill 7
 // 1 = HS
 // 2 = DS
 // 3 = HoM
 // 4 = FS
 // 5 = WC
 // 6 = SC
+// 7 = DS, HoM, FS, WC, SC
 
 //press given skills every X seconds
 var #intervalHS 0
-var #intervalDS 10
-var #intervalFS 30
-var #intervalHoM 10
-var #intervalWC 10
-var #intervalSC 10
+var #intervalDS 0
+var #intervalFS 0
+var #intervalHoM 0
+var #intervalWC 0
+var #intervalSC 0
 
 var #unlocked 0
 //these will be the skill intervals when #lateRun > 0
@@ -544,6 +545,12 @@ goto :start
 	elseif #fullManaSkill == 5
 		touchPress 0 360 710
 	elseif #fullManaSkill == 6
+		touchPress 0 430 710
+	elseif #fullManaSkill == 7
+		touchPress 0 120 710
+		touchPress 0 200 710
+		touchPress 0 280 710
+		touchPress 0 360 710
 		touchPress 0 430 710
 	endif
 	#time = #time + 150
